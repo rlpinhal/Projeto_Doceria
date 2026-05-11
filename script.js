@@ -11,31 +11,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const address = document.getElementById('address').value;
 
         // Base URL for the Google Form
-        const baseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSewNQMmpySA_FesuczmmeVgC0lZmxSkKFjTp-J7PKuNVsEy6Q/viewform';
+        const baseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSewNQMmpySA_FesuczmmeVgC0lZmxSkKFjTp-J7PKuNVsEy6Q/formResponse';
         
-        // Form Entry IDs based on user input
-        // entry.677308980 = Produto
-        // entry.1866836889 = Quantidade
-        // entry.223438221 = Numero Zap
-        // entry.973265489 = Endereço
+        // Create FormData
+        const formData = new FormData();
+        formData.append('entry.677308980', product);
+        formData.append('entry.1866836889', quantity);
+        formData.append('entry.223438221', whatsapp);
+        formData.append('entry.973265489', address);
 
-        // Create params
-        const params = new URLSearchParams();
-        params.append('usp', 'pp_url');
-        params.append('entry.677308980', product);
-        params.append('entry.1866836889', quantity);
-        params.append('entry.223438221', whatsapp);
-        params.append('entry.973265489', address);
+        // Visual Feedback (Loading)
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<span>Enviando...</span><i class="ph ph-spinner ph-spin" style="animation: spin 1s linear infinite;"></i>';
+        submitBtn.disabled = true;
 
-        // Build Final URL
-        const finalUrl = `${baseUrl}?${params.toString()}`;
-
-        // Redirect to the URL
-        // Using window.location.href to redirect in the same tab, or window.open for a new tab
-        // Opening in the same tab is usually better for mobile flows, but new tab preserves the app.
-        window.open(finalUrl, '_blank');
-        
-        // Optional: clear the form after submission
-        // form.reset();
+        // Send request silently
+        fetch(baseUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        }).then(() => {
+            // Sucesso (no-cors always resolves if no network error)
+            alert('Encomenda enviada com sucesso! Entraremos em contato em breve via WhatsApp.');
+            form.reset();
+        }).catch((error) => {
+            console.error('Error submitting form:', error);
+            alert('Houve um erro ao enviar. Por favor, tente contatar via WhatsApp diretamente.');
+        }).finally(() => {
+            // Restore button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
     });
 });
