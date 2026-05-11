@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wabi Sabi | Doceria Gourmet</title>
+    <meta name="description" content="Encomende os melhores bolos de festa, bolos caseiros, cookies e paletas na Wabi Sabi. A sua doceria gourmet.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Background Elements for Glassmorphism -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <main class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="ph ph-cake" style="font-size: 2.5rem; color: var(--primary);"></i>
+                <h1>Wabi Sabi</h1>
+            </div>
+            <p class="subtitle">Doceria Gourmet</p>
+        </header>
+
+        <!-- Order Section -->
+        <section class="glass-panel order-section">
+            <h2>Faça sua Encomenda</h2>
+            <p class="form-description">Preencha os dados abaixo para fazer seu pedido rapidamente pelo nosso sistema.</p>
+            
+            <form id="orderForm" class="order-form">
+                
+                <!-- Product -->
+                <div class="input-group">
+                    <label for="product"><i class="ph ph-package"></i> Produto Desejado</label>
+                    <div class="select-wrapper">
+                        <select id="product" name="product" required>
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="Bolo de festa">Bolo de festa</option>
+                            <option value="Bolo caseiro">Bolo caseiro</option>
+                            <option value="Cookies">Cookies</option>
+                            <option value="Paleta de bolo de cenoura">Paleta de bolo de cenoura</option>
+                        </select>
+                        <i class="ph ph-caret-down select-icon"></i>
+                    </div>
+                </div>
+
+                <!-- Quantity -->
+                <div class="input-group">
+                    <label for="quantity"><i class="ph ph-hash"></i> Quantidade</label>
+                    <input type="text" id="quantity" name="quantity" placeholder="Ex: 20 pessoas ou 5 unidades" required>
+                    <small>Em caso de bolo, quantas pessoas. Para cookies/paletas, informar unidades.</small>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="input-group">
+                    <label for="whatsapp"><i class="ph ph-whatsapp-logo"></i> Seu WhatsApp</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 90000-0000" required>
+                </div>
+
+                <!-- Address -->
+                <div class="input-group">
+                    <label for="address"><i class="ph ph-map-pin"></i> Endereço de Entrega/Retirada</label>
+                    <textarea id="address" name="address" rows="3" placeholder="Rua, Número, Bairro..." required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">
+                    <span>Avançar para Confirmação</span>
+                    <i class="ph ph-arrow-right"></i>
+                </button>
+            </form>
+        </section>
+        
+        <footer>
+            <p>&copy; 2026 Wabi Sabi. Todos os direitos reservados.</p>
+        </footer>
+    </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511998879993" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Contato rápido via WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+        <span class="tooltip">Fale com a gente!</span>
+    </a>
+
+    <script src="./script.js"></script>
+</body>
+</html>
