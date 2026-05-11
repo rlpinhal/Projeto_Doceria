@@ -1,14 +1,14 @@
 :root {
     /* Wabi Sabi Brand Colors */
-    --primary: #5184B3;      /* Logo Blue */
-    --primary-dark: #3C6892;
-    --secondary: #E85D60;    /* Strawberry Red Accent */
-    --secondary-dark: #C64043;
+    --primary: #E2EA95;      /* Pale Yellow/Lime */
+    --primary-dark: #C9D36B;
+    --secondary: #FFFFFF;    /* White */
+    --secondary-dark: #E0E0E0;
     
     /* Dark Theme Basics */
-    --bg-color: #0B0E14;
+    --bg-color: #384C6B;     /* Slate Navy Blue */
     --text-main: #FFFFFF;
-    --text-muted: #A0AABF;
+    --text-muted: #AEC1D9;
     
     /* UI Elements */
     --glass-bg: rgba(255, 255, 255, 0.03);
@@ -193,7 +193,7 @@ body {
 .input-group textarea:focus {
     border-color: var(--primary);
     background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 0 4px rgba(81, 132, 179, 0.1);
+    box-shadow: 0 0 0 4px rgba(226, 234, 149, 0.1);
 }
 
 .input-group input::placeholder,
@@ -241,7 +241,7 @@ body {
 /* Submit Button */
 .btn-submit {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: #fff;
+    color: var(--bg-color); /* Dark text for light button */
     border: none;
     border-radius: 12px;
     padding: 1.1rem;
@@ -255,13 +255,13 @@ body {
     gap: 0.5rem;
     margin-top: 1rem;
     transition: all var(--transition-fast);
-    box-shadow: 0 4px 15px rgba(81, 132, 179, 0.3);
+    box-shadow: 0 4px 15px rgba(226, 234, 149, 0.3);
 }
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(81, 132, 179, 0.4);
-    background: linear-gradient(135deg, #6198CD, var(--primary));
+    box-shadow: 0 6px 20px rgba(226, 234, 149, 0.4);
+    background: linear-gradient(135deg, #F0F5B8, var(--primary));
 }
 
 .btn-submit:active {
