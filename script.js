@@ -5,20 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         // Get values
+        const nome = document.getElementById('nome').value;
+        const preferencia = document.getElementById('preferencia').value;
         const product = document.getElementById('product').value;
         const quantity = document.getElementById('quantity').value;
         const whatsapp = document.getElementById('whatsapp').value;
         const address = document.getElementById('address').value;
+        const observacoes = document.getElementById('observacoes').value;
 
         // Base URL for the Google Form
-        const baseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSewNQMmpySA_FesuczmmeVgC0lZmxSkKFjTp-J7PKuNVsEy6Q/formResponse';
+        const baseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdqfevq-oimji29KxUjTD97FqYhqpRyvWUMB0G0jJ8GiKhI1Q/formResponse';
         
+        // Formatar observações
+        const observacoesFinais = `Quantidade: ${quantity}\n${observacoes ? 'Obs: ' + observacoes : ''}`;
+
         // Create FormData
         const formData = new FormData();
-        formData.append('entry.677308980', product);
-        formData.append('entry.1866836889', quantity);
-        formData.append('entry.223438221', whatsapp);
-        formData.append('entry.973265489', address);
+        formData.append('entry.324301652', nome);
+        formData.append('entry.41738870', preferencia);
+        formData.append('entry.1023102199', address);
+        formData.append('entry.73929848', whatsapp);
+        formData.append('entry.683016357', product);
+        formData.append('entry.2138500953', observacoesFinais);
 
         // Visual Feedback (Loading)
         const submitBtn = document.getElementById('submitBtn');

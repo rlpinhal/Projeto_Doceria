@@ -38,16 +38,35 @@
             
             <form id="orderForm" class="order-form">
                 
+                <!-- Nome -->
+                <div class="input-group">
+                    <label for="nome"><i class="ph ph-user"></i> Seu Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <!-- Preferência -->
+                <div class="input-group">
+                    <label for="preferencia"><i class="ph ph-storefront"></i> Preferência</label>
+                    <div class="select-wrapper">
+                        <select id="preferencia" name="preferencia" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="Entrega (Delivery)">Entrega (Delivery)</option>
+                            <option value="Retirada no Local">Retirada no Local</option>
+                        </select>
+                        <i class="ph ph-caret-down select-icon"></i>
+                    </div>
+                </div>
+
                 <!-- Product -->
                 <div class="input-group">
                     <label for="product"><i class="ph ph-package"></i> Produto Desejado</label>
                     <div class="select-wrapper">
                         <select id="product" name="product" required>
                             <option value="" disabled selected>Selecione uma opção...</option>
-                            <option value="Bolo de festa">Bolo de festa</option>
-                            <option value="Bolo caseiro">Bolo caseiro</option>
-                            <option value="Cookies">Cookies</option>
-                            <option value="Paleta de bolo de cenoura">Paleta de bolo de cenoura</option>
+                            <option value="Bombom de Morango">Bombom de Morango</option>
+                            <option value="Cone Recheado">Cone Recheado</option>
+                            <option value="Bolo Recheado (Fatias ou Pote)">Bolo Recheado (Fatias ou Pote)</option>
+                            <option value="Cookies Especiais">Cookies Especiais</option>
                         </select>
                         <i class="ph ph-caret-down select-icon"></i>
                     </div>
@@ -68,8 +87,14 @@
 
                 <!-- Address -->
                 <div class="input-group">
-                    <label for="address"><i class="ph ph-map-pin"></i> Endereço de Entrega/Retirada</label>
-                    <textarea id="address" name="address" rows="3" placeholder="Rua, Número, Bairro..." required></textarea>
+                    <label for="address"><i class="ph ph-map-pin"></i> Endereço de Entrega (se aplicável)</label>
+                    <textarea id="address" name="address" rows="2" placeholder="Rua, Número, Bairro..."></textarea>
+                </div>
+
+                <!-- Observações -->
+                <div class="input-group">
+                    <label for="observacoes"><i class="ph ph-chat-text"></i> Observações</label>
+                    <textarea id="observacoes" name="observacoes" rows="2" placeholder="Sabor, restrições, etc."></textarea>
                 </div>
 
                 <!-- Submit Button -->
