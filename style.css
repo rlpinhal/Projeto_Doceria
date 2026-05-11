@@ -1,9 +1,9 @@
 :root {
     /* Wabi Sabi Brand Colors */
-    --primary: #00D084;      /* Vibrant Green */
-    --primary-dark: #00A669;
-    --secondary: #0056D2;    /* Vibrant Blue */
-    --secondary-dark: #003F9E;
+    --primary: #5184B3;      /* Logo Blue */
+    --primary-dark: #3C6892;
+    --secondary: #E85D60;    /* Strawberry Red Accent */
+    --secondary-dark: #C64043;
     
     /* Dark Theme Basics */
     --bg-color: #0B0E14;
@@ -104,13 +104,13 @@ body {
     margin-bottom: 0.25rem;
 }
 
-.logo h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-    background: linear-gradient(to right, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: contain;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--primary);
 }
 
 .subtitle {
@@ -193,7 +193,7 @@ body {
 .input-group textarea:focus {
     border-color: var(--primary);
     background: rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 0 4px rgba(0, 208, 132, 0.1);
+    box-shadow: 0 0 0 4px rgba(81, 132, 179, 0.1);
 }
 
 .input-group input::placeholder,
@@ -240,7 +240,7 @@ body {
 
 /* Submit Button */
 .btn-submit {
-    background: linear-gradient(135deg, var(--primary), #00b372);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: #fff;
     border: none;
     border-radius: 12px;
@@ -255,13 +255,13 @@ body {
     gap: 0.5rem;
     margin-top: 1rem;
     transition: all var(--transition-fast);
-    box-shadow: 0 4px 15px rgba(0, 208, 132, 0.3);
+    box-shadow: 0 4px 15px rgba(81, 132, 179, 0.3);
 }
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 208, 132, 0.4);
-    background: linear-gradient(135deg, #00e692, var(--primary));
+    box-shadow: 0 6px 20px rgba(81, 132, 179, 0.4);
+    background: linear-gradient(135deg, #6198CD, var(--primary));
 }
 
 .btn-submit:active {
